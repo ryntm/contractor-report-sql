@@ -1,0 +1,470 @@
+<div>
+    <h3>Tuition Collection Gigs</h3>
+    <h3>Year: {{ date.year }}</h3>
+    <h3 id="period"></h3>
+
+<div id="regular-header" style="display: inline-block;">
+
+        <h1>QA Contractors 
+            <span id="qa-high-kpi-value" style="float: right; color: red"></span>
+            <span style="float: right;">High KPI: $</span>
+        </h1>
+
+        {{!-- <h3 id="high-kpi-value" style="float: right"></h3> --}}
+</div>
+<table class="table-sm table-bordered" style="width:75%;padding:10px;">
+    
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Hours
+        </th>
+        <th>
+            Cost
+        </th>
+        <th>
+            # of gigs
+        </th>
+        <th>
+            # of tuitions
+        </th>
+        <th>
+            tuitions per hour
+        </th>
+        <th>
+            cost per tuition
+        </th>
+    </tr>
+
+    <script>
+        let kpiArray = [];
+        let qa_degreesByHours = 0;
+        let qa_degreesByCost = 0;
+        let qa_kpiArray = [];
+        let qa_totalCostArray = [];
+        let qa_contractorIDArray = [];
+        let qa_costArray = [];
+        let qa_totalHours = [];
+        let qa_totalGigs = [];
+    </script>
+    {{#each qa_data}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.qaer_name}}</td>
+            <td>{{this.total_hours}}</td>
+            <td>${{this.total_charges}}</td>
+            <td id="{{this.id}}qaer-gig-count">{{this.gig_count}}</td>
+            <td id="{{this.id}}qaer-kpi-count">{{this.tuitions_collected}}</td>
+            <td id="{{this.id}}hour-qa"></td>
+            <td id="{{this.id}}cost-qa"></td>
+
+        </tr>
+
+        <script>
+            qa_degreesByHours = {{this.tuitions_collected}}/{{this.total_hours}};
+            $('#{{this.id}}hour-qa').text(qa_degreesByHours.toFixed(2));
+            qa_degreesByCost = {{this.total_charges}}/{{this.tuitions_collected}};
+            $('#{{this.id}}cost-qa').text("$"+qa_degreesByCost.toFixed(2));
+            qa_kpiArray.push({{ this.tuitions_collected }});
+            qa_totalCostArray.push({{this.total_charges}});
+            qa_contractorIDArray.push({{this.id}});
+            qa_costArray.push(qa_degreesByCost);
+            qa_totalHours.push({{this.total_hours}});
+            qa_totalGigs.push({{this.gig_count}});
+        </script>
+
+    {{/each}}
+        <td class="total-row">Total</td>
+        <td>--</td>
+        <td id="qa-total-hours"></td>
+        <td id="qa-total-cost"></td>
+        <td id="qa-total-gigs"></td>
+        <td id="qa-total-degrees"></td>
+        <td id="qa-degrees-per-hour"></td>
+        <td id="qa-cost-per-degree"></td>
+    </tr>
+
+</table>
+
+<br>
+
+<div id="regular-header" style="display: inline-block;">
+
+        <h1>Regular Contractors 
+            <span id="high-kpi-value" style="float: right; color: red;"></span>
+            <span style="float: right;">High KPI: $</span>
+        </h1>
+        {{!-- <h3 id="high-kpi-value" style="float: right"></h3> --}}
+</div>
+<table class="table-sm table-bordered" style="width:75%;padding:10px;">
+
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Hours
+        </th>
+        <th>
+            Cost
+        </th>
+        <th>
+            # of gigs
+        </th>
+        <th>
+            # of degrees
+        </th>
+        <th>
+            degrees per hour
+        </th>
+        <th>
+            cost per degree
+        </th>
+    </tr>
+
+    <script>
+        let degreesByHours = 0;
+        let degreesByCost = 0;
+        let gigCountArray = [];
+        let totalCostArray = [];
+        let contractorIDArray = [];
+        let costArray = [];  
+        let hoursArray = [];
+        let gigsArray = [];
+    </script>
+    {{#each data}}
+        <tr id="{{this.id}}row">
+            <td>{{this.id}}</td>
+            <td>{{this.oc_name}}</td>
+            <td>{{this.total_hours}}</td>
+            <td>${{this.total_charges}}</td>
+            <td>{{this.gig_count}}</td>
+            <td>{{this.tuitions_collected}}</td>
+            <td id="{{this.id}}hour"></td>
+            <td id="{{this.id}}cost"></td>
+
+        </tr>
+
+        <script>
+            degreesByHours = {{this.tuitions_collected}}/{{this.total_hours}};
+            $('#{{this.id}}hour').text(degreesByHours.toFixed(2));
+            degreesByCost = {{this.total_charges}}/{{this.tuitions_collected}};
+            $('#{{this.id}}cost').text("$"+degreesByCost.toFixed(2));
+            kpiArray.push({{ this.tuitions_collected }});
+            totalCostArray.push({{this.total_charges}});
+            contractorIDArray.push({{this.id}})
+            costArray.push(degreesByCost)            
+            gigCountArray.push({{this.gig_count}})
+            hoursArray.push({{this.total_hours}})
+            gigsArray.push({{this.gig_count}})
+        </script>
+
+    {{/each}}
+    <tr class="total-row">
+        <td>Total</td>
+        <td>--</td>
+        <td id="total-hours"></td>
+        <td id="total-cost"></td>
+        <td id="total-gigs"></td>
+        <td id="total-degrees"></td>
+        <td id="degrees-per-hour"></td>
+        <td id="cost-per-degree"></td>
+    </tr>
+
+</table>
+
+<br>
+
+
+<h1>Comparisons</h1>
+<span>All-time degrees collected and money spent and all-time information from the same time last year</span>
+
+<table class="table-sm table-bordered" style="width:75%;padding:10px;">
+
+    <tr>
+        <th>
+            Year
+        </th>
+        <th>
+            # of gigs
+        </th>
+        <th>
+            # of tuition
+        </th>
+        <th>
+            total cost
+        </th>
+        <th>
+            cost per tuition
+        </th>
+    </tr>
+
+    <tr>
+        <td id="this-year-comparison"></td>
+        <td id="this-year-gig-total"></td>
+        <td id="this-year-degree-total"></td>
+        <td id="this-year-total-cost"></td>
+        <td id="this-year-cost-per-degree"></td>
+    </tr>
+
+    <tr>
+        <td id="last-year-comparison"></td>
+        <td id="last-year-gig-total"></td>
+        <td id="last-year-degree-total"></td>
+        <td id="last-year-total-cost"></td>
+        <td id="last-year-cost-per-degree"></td>
+    </tr>
+
+</table>
+
+
+
+
+<br>
+<br>
+
+<script>
+    console.log(gigCountArray)
+    
+    // In case there is a QAer that also submitted regular gigs, add their KPIs to their QAer row and delete their regular contractor entry 
+    for (let i = contractorIDArray.length; i >= 0; i--) {
+        if (qa_contractorIDArray.indexOf(contractorIDArray[i]) >= 0) {
+            console.log('there was a dupe: '+contractorIDArray[i])
+            // removes the row in the regular contractor table
+            $(`#${contractorIDArray[i]}row`).remove()
+
+            // getting gig count from the QAer table of the duplicate contractor
+            let addTheseQaerGigs = parseInt($(`#${contractorIDArray[i]}qaer-gig-count`).text())
+            console.log(addTheseQaerGigs)
+            $(`#${contractorIDArray[i]}qaer-gig-count`).text(addTheseQaerGigs+gigCountArray[i])
+
+            // getting kpi  count from the QAer table of the duplicate contractor
+            let addTheseQaerKpis = parseInt($(`#${contractorIDArray[i]}qaer-kpi-count`).text())
+            $(`#${contractorIDArray[i]}qaer-kpi-count`).text(addTheseQaerKpis+kpiArray[i])
+
+            // redoing and replacing averages dupes
+            let newDegreePerHourAverage = (addTheseQaerKpis+kpiArray[i]) / hoursArray[i]
+            $(`#${contractorIDArray[i]}hour-qa`).text(newDegreePerHourAverage.toFixed(2));
+
+            let newCostPerDegree = totalCostArray[i] / (addTheseQaerKpis+kpiArray[i])
+            $(`#${contractorIDArray[i]}cost-qa`).text('$'+newCostPerDegree.toFixed(2));
+
+            // splicing/replacing the cost array entry with new average into qacontractoridarray
+            qa_costArray.splice(qa_contractorIDArray.indexOf(contractorIDArray[i]), 1, newCostPerDegree)
+
+            //splice out the dupes kpis and other arrays
+
+            hoursArray.splice(i,1)
+            totalCostArray.splice(i,1)
+            gigCountArray.splice(i,1)
+            kpiArray.splice(i,1)
+
+        }
+    }
+
+    let qaTotalHours = qa_totalHours.reduce(function(a, b) {
+        return a + b
+    }, 0);
+
+    let qaTotalCost = qa_totalCostArray.reduce(function(a, b) {
+        return a + b
+    }, 0);
+
+    let qaTotalGigs = qa_totalGigs.reduce(function(a, b) {
+        return a + b
+    }, 0);
+
+    let qaKPIArray = qa_kpiArray.reduce(function(a, b) {
+        return a + b
+    }, 0);
+
+    let qaDegreesPerHour = qaKPIArray / qaTotalHours;
+    let qaCostPerDegree = qaTotalCost / qaKPIArray;
+
+    console.log(qaDegreesPerHour)
+    console.log(qaCostPerDegree)
+
+    $('#qa-total-hours').text(`${qaTotalHours.toFixed(2)}`);
+    $('#qa-total-cost').text(`$${qaTotalCost.toFixed(2)}`);
+    $('#qa-total-gigs').text(`${qaTotalGigs}`);
+    $('#qa-total-degrees').text(`${qaKPIArray}`);
+    $('#qa-degrees-per-hour').text(qaDegreesPerHour.toFixed(2));
+    $('#qa-cost-per-degree').text('$'+qaCostPerDegree.toFixed(2));
+
+    let totalHours = hoursArray.reduce(function(a, b) {
+        return a + b
+    }, 0);
+
+    let totalCost = totalCostArray.reduce(function(a, b) {
+        return a + b
+    }, 0);
+
+    let totalGigs = gigCountArray.reduce(function(a, b) {
+        return a + b
+    }, 0);
+
+    let totalKPI = kpiArray.reduce(function(a, b) {
+        return a + b
+    }, 0);
+
+    let averageDegreePerHours = totalKPI / totalHours;
+    let averageCostPerKPI = totalCost / totalKPI;
+
+
+    $('#total-hours').text(`${totalHours.toFixed(2)}`);
+    $('#total-cost').text(`$${totalCost.toFixed(2)}`);
+    $('#total-gigs').text(`${totalGigs}`);
+    $('#total-degrees').text(`${totalKPI}`);
+    $('#degrees-per-hour').text(averageDegreePerHours.toFixed(2));
+    $('#cost-per-degree').text('$'+averageCostPerKPI.toFixed(2));
+
+    let highCostPerKPI = averageCostPerKPI * 2
+    $('#high-kpi-value').text(highCostPerKPI.toFixed(2))
+    let highQACostPerKPI = qaCostPerDegree * 2
+    $('#qa-high-kpi-value').text(highQACostPerKPI.toFixed(2))
+    console.log()
+    console.log("cost per KPI too high: "+highCostPerKPI)
+
+    for (let i = 0; i < contractorIDArray.length; i++) {
+        if (costArray[i] > highCostPerKPI) {
+            console.log(`${costArray[i]} -- reg contractor: ${contractorIDArray[i]}`)
+            $(`#${contractorIDArray[i]}cost`).attr('style', 'background-color: red')
+        }
+    }
+
+    for (let i = 0; i < qa_contractorIDArray.length; i++) {
+        if (qa_costArray[i] > highQACostPerKPI) {
+            console.log(`${qa_costArray[i]} -- QAer contractor: ${qa_contractorIDArray[i]}`)
+
+            $(`#${qa_contractorIDArray[i]}cost-qa`).attr('style', 'background-color: red')
+        }
+    }
+
+    let isYear = "{{ date.year }}"; 
+    let isQuarter = "{{ date.quarter }}";
+    let isMonth = "{{ date.month }}";
+    let link = "";
+    let localLink = "";
+
+    // doing math for the year comparison table
+    let thisYearDegreeTotal = "{{ data_total.tuitions_collected }}"
+    let thisYearGigTotal = "{{ data_total.gig_count }}"
+    let thisYearQADegreeTotal = "{{ qa_data_total.tuitions_collected }}";
+    let thisYearQAGigTotal = "{{ qa_data_total.gig_count }}";
+    let thisYearTotalCost = "{{ upwork_data.totalcharges }}";
+
+    console.log(thisYearDegreeTotal)
+    console.log(thisYearGigTotal)
+    console.log(thisYearQADegreeTotal)
+    console.log(thisYearQAGigTotal)
+
+    let lastYearDegreeTotal = "{{ data_total_prev_year.tuitions_collected }}";
+    let lastYearGigTotal = "{{ data_total_prev_year.gig_count }}";
+    let lastYearQADegreeTotal = "{{ qa_data_total_prev_year.tuitions_collected }}";
+    let lastYearQAGigTotal = "{{ qa_data_total_prev_year.gig_count }}";
+    let lastYearTotalCost = "{{ upwork_data_prev_year.totalcharges }}"; 
+
+    console.log(lastYearDegreeTotal)
+    console.log(lastYearGigTotal)
+    console.log(lastYearQADegreeTotal)
+    console.log(lastYearQAGigTotal)
+
+    $("#this-year-comparison").text(isYear);
+    $("#this-year-gig-total").text(parseInt(thisYearGigTotal)+parseInt(thisYearQAGigTotal));
+    $("#this-year-degree-total").text(parseInt(thisYearDegreeTotal)+parseInt(thisYearQADegreeTotal));
+    $("#this-year-total-cost").text("$"+parseInt(thisYearTotalCost));
+    $("#this-year-cost-per-degree").text("$"+(parseInt(thisYearTotalCost)/(parseInt(thisYearDegreeTotal)+parseInt(thisYearQADegreeTotal))).toFixed(2));
+
+
+    $("#last-year-comparison").text(isYear-1);
+    $("#last-year-gig-total").text(parseInt(lastYearGigTotal)+parseInt(lastYearQAGigTotal));
+    $("#last-year-degree-total").text(parseInt(lastYearDegreeTotal)+parseInt(lastYearQADegreeTotal));
+    $("#last-year-total-cost").text("$"+parseInt(lastYearTotalCost));
+    $("#last-year-cost-per-degree").text("$"+(parseInt(lastYearTotalCost)/(parseInt(lastYearDegreeTotal)+parseInt(lastYearQADegreeTotal))).toFixed(2));
+
+    $("#tuitioncollection-button").attr('style', 'background-color: white; color: gray;')
+
+    // nav url attributes
+
+    if (isQuarter.length !== 0) {
+        $("#period").text("Quarter: "+isQuarter);
+        $("#tuitioncollection").attr('href', '/tuitioncollection/{{ date.year }}/q/{{ date.quarter }}/');
+        $("#degreecollection").attr('href', '/degreecollection/{{ date.year }}/q/{{ date.quarter }}/')
+        $("#bestpagecollection").attr('href', '/bestpagecollection/{{ date.year }}/q/{{ date.quarter }}/')
+        $("#collegecontactcollection").attr('href', '/collegecontactcollection/{{ date.year }}/q/{{ date.quarter }}/');
+
+        for (let i = 2014; i < 2021; i++) {
+            $(`#year${i}`).attr('href', `/{{ type.type }}/${i}/q/{{ date.quarter }}/`)
+            link = "https://rocky-reef-60993.herokuapp.com"+$(`#year${i}`).attr('href');
+            localLink = "http://localhost:8080"+$(`#year${i}`).attr('href');
+            if (link === location.href) {
+                $(`#yearlink${i}`).attr('style', 'background-color: white; color: gray')
+            } else if (localLink === location.href) {
+                $(`#yearlink${i}`).attr('style', 'background-color: white; color: gray')
+            }
+        }
+
+    } else if (isMonth.length !== 0) {
+        $("#period").text("Month: "+isMonth);
+        $("#tuitioncollection").attr('href', '/tuitioncollection/{{ date.year }}/{{ date.month }}/');
+        $("#degreecollection").attr('href', '/degreecollection/{{ date.year }}/{{ date.month }}/');
+        $("#bestpagecollection").attr('href', '/bestpagecollection/{{ date.year }}/{{ date.month }}/');
+        $("#collegecontactcollection").attr('href', '/collegecontactcollection/{{ date.year }}/{{ date.month }}/');
+
+        for (let i = 2014; i < 2021; i++) {
+            $(`#year${i}`).attr('href', `/{{ type.type }}/${i}/{{ date.month }}/`)
+            link = "https://rocky-reef-60993.herokuapp.com"+$(`#year${i}`).attr('href');
+            localLink = "http://localhost:8080"+$(`#year${i}`).attr('href');
+            if (link === location.href) {
+                $(`#yearlink${i}`).attr('style', 'background-color: white; color: gray;')
+            } else if (localLink === location.href) {
+                $(`#yearlink${i}`).attr('style', 'background-color: white; color: gray;')
+            }
+        }
+
+    } else {
+        $("#period").text("Month: "+isMonth)
+        $("#tuitioncollection").attr('href', '/tuitioncollection/2020/{{ date.month }}/')
+        $("#degreecollection").attr('href', '/degreecollection/2020/{{ date.month }}/')
+        $("#bestpagecollection").attr('href', '/bestpage/2020/{{ date.month }}/')
+        $("#collegecontactcollection").attr('href', '/collegecontact/2020/{{ date.month }}/')
+        for (let i = 2014; i < 2021; i++) {
+            $(`#year${i}`).attr('href', `/{{ type.type }}/${i}/{{ date.month }}/`)
+        }
+
+    }
+
+    for (let i = 1; i < 13; i++) {
+        $(`#month${i}`).attr('href', `/{{ type.type }}/{{ date.year }}/${i}/`);
+        link = "https://rocky-reef-60993.herokuapp.com"+$(`#month${i}`).attr('href');
+        localLink = "http://localhost:8080"+$(`#month${i}`).attr('href');
+        if (link === location.href) {
+            $(`#monthlink${i}`).attr('style', 'background-color: white; color: gray;');
+        } else if (localLink === location.href) {
+            $(`#monthlink${i}`).attr('style', 'background-color: white; color: gray;');
+
+        }
+    }
+
+    for (let i = 1; i < 5; i++) {
+        $(`#q${i}`).attr('href', `/{{ type.type }}/{{ date.year }}/q/${i}/`)
+        link = "https://rocky-reef-60993.herokuapp.com"+$(`#q${i}`).attr('href');
+        localLink = "http://localhost:8080"+$(`#q${i}`).attr('href')
+        if (link === location.href) {
+            $(`#quarterlink${i}`).attr('style', 'background-color: white; color: gray;')
+        } else if (localLink === location.href) {
+            $(`#quarterlink${i}`).attr('style', 'background-color: white; color: gray;')
+        }
+    }
+</script>
+
+</table>
+</div>
