@@ -403,7 +403,7 @@
 
         for (let i = 2014; i < 2021; i++) {
             $(`#year${i}`).attr('href', `/{{ type.type }}/${i}/q/{{ date.quarter }}/`)
-            link = "https://rocky-reef-60993.herokuapp.com"+$(`#year${i}`).attr('href');
+            link = "https://optimal-contractor-report.herokuapp.com"+$(`#year${i}`).attr('href');
             localLink = "http://localhost:8080"+$(`#year${i}`).attr('href');
             if (link === location.href) {
                 $(`#yearlink${i}`).attr('style', 'background-color: white; color: gray')
@@ -421,7 +421,7 @@
 
         for (let i = 2014; i < 2021; i++) {
             $(`#year${i}`).attr('href', `/{{ type.type }}/${i}/{{ date.month }}/`)
-            link = "https://rocky-reef-60993.herokuapp.com"+$(`#year${i}`).attr('href');
+            link = "https://optimal-contractor-report.herokuapp.com"+$(`#year${i}`).attr('href');
             localLink = "http://localhost:8080"+$(`#year${i}`).attr('href');
             if (link === location.href) {
                 $(`#yearlink${i}`).attr('style', 'background-color: white; color: gray;')
@@ -444,7 +444,7 @@
 
     for (let i = 1; i < 13; i++) {
         $(`#month${i}`).attr('href', `/{{ type.type }}/{{ date.year }}/${i}/`);
-        link = "https://rocky-reef-60993.herokuapp.com"+$(`#month${i}`).attr('href');
+        link = "https://optimal-contractor-report.herokuapp.com"+$(`#month${i}`).attr('href');
         localLink = "http://localhost:8080"+$(`#month${i}`).attr('href');
         if (link === location.href) {
             $(`#monthlink${i}`).attr('style', 'background-color: white; color: gray;');
@@ -456,7 +456,7 @@
 
     for (let i = 1; i < 5; i++) {
         $(`#q${i}`).attr('href', `/{{ type.type }}/{{ date.year }}/q/${i}/`)
-        link = "https://rocky-reef-60993.herokuapp.com"+$(`#q${i}`).attr('href');
+        link = "https://optimal-contractor-report.herokuapp.com"+$(`#q${i}`).attr('href');
         localLink = "http://localhost:8080"+$(`#q${i}`).attr('href')
         if (link === location.href) {
             $(`#quarterlink${i}`).attr('style', 'background-color: white; color: gray;')
