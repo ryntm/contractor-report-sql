@@ -59,7 +59,7 @@ router.get('/bestpagecollection/:year/:month', (req, res) => {
                                         upwork_data: upwork_data_by_year,
                                         upwork_data_prev_year: upwork_data_by_year_prev_year,
                                         date: {year: req.params.year, month: req.params.month},
-                                        type: {type: "bestpage"}
+                                        type: {type: "bestpagecollection"}
                                     });
                                 });
                             });
@@ -109,7 +109,7 @@ router.get('/api/bestpagecollection/:year/:month', (req, res) => {
                                         upwork_data: upwork_data_by_year,
                                         upwork_data_prev_year: upwork_data_by_year_prev_year,
                                         date: {year: req.params.year, month: req.params.month},
-                                        type: {type: "bestpage"}
+                                        type: {type: "bestpagecollection"}
                                     });
                                 });
                             });
@@ -161,7 +161,7 @@ router.get('/bestpagecollection/:year/q/:quarter', (req, res) => {
                                         upwork_data: upwork_data_by_year,
                                         upwork_data_prev_year: upwork_data_by_year_prev_year,
                                         date: {year: req.params.year, quarter: req.params.quarter},
-                                        type: {type: "bestpage"}
+                                        type: {type: "bestpagecollection"}
                                     });
                                 });
                             });
@@ -211,7 +211,7 @@ router.get('/api/bestpagecollection/:year/q/:quarter', (req, res) => {
                                         upwork_data: upwork_data_by_year,
                                         upwork_data_prev_year: upwork_data_by_year_prev_year,
                                         date: {year: req.params.year, quarter: req.params.quarter},
-                                        type: {type: "bestpage"}
+                                        type: {type: "bestpagecollection"}
                                     });
                                 });
                             });
@@ -265,7 +265,7 @@ router.get('/collegecontactcollection/:year/:month', (req, res) => {
                                         upwork_data: upwork_data_by_year,
                                         upwork_data_prev_year: upwork_data_by_year_prev_year,
                                         date: {year: req.params.year, month: req.params.month},
-                                        type: {type: "collegecontact"}
+                                        type: {type: "collegecontactcollection"}
                                     });
                                 });
                             });
@@ -330,7 +330,7 @@ router.get('/api/collegecontactcollection/:year/:month', (req, res) => {
                                         upwork_data: upwork_data_by_year,
                                         upwork_data_prev_year: upwork_data_by_year_prev_year,
                                         date: {year: req.params.year, month: req.params.month},
-                                        type: {type: "collegecontact"}
+                                        type: {type: "collegecontactcollection"}
                                     });
                                 });
                             });
@@ -382,7 +382,7 @@ router.get('/collegecontactcollection/:year/q/:quarter', (req, res) => {
                                         upwork_data: upwork_data_by_year,
                                         upwork_data_prev_year: upwork_data_by_year_prev_year,
                                         date: {year: req.params.year, quarter: req.params.quarter},
-                                        type: {type: "collegecontact"}
+                                        type: {type: "collegecontactcollection"}
                                     });
                                 });
                             });
@@ -447,7 +447,7 @@ router.get('/api/collegecontactcollection/:year/:month', (req, res) => {
                                         upwork_data: upwork_data_by_year,
                                         upwork_data_prev_year: upwork_data_by_year_prev_year,
                                         date: {year: req.params.year, month: req.params.month},
-                                        type: {type: "collegecontact"}
+                                        type: {type: "collegecontactcollection"}
                                     });
                                 });
                             });
