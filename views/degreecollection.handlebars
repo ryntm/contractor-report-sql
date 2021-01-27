@@ -54,7 +54,7 @@
     </script>
     {{#each qa_data}}
         <tr>
-            <td>{{this.id}}</td>
+            <td><a href="/id/{{this.id}}">{{this.id}}</a></td>
             <td>{{this.qaer_name}}</td>
             <td>{{this.total_hours}}</td>
             <td>${{this.total_charges}}</td>
@@ -143,7 +143,7 @@
     </script>
     {{#each data}}
         <tr id="{{this.id}}row">
-            <td>{{this.id}}</td>
+            <td><a href="/id/{{this.id}}/">{{this.id}}</a></td>
             <td>{{this.oc_name}}</td>
             <td>{{this.total_hours}}</td>
             <td>${{this.total_charges}}</td>
@@ -403,7 +403,7 @@
         $("#bestpagecollection").attr('href', '/bestpagecollection/{{ date.year }}/q/{{ date.quarter }}/')
         $("#collegecontactcollection").attr('href', '/collegecontactcollection/{{ date.year }}/q/{{ date.quarter }}/');
 
-        for (let i = 2014; i < 2021; i++) {
+        for (let i = 2014; i < 2022; i++) {
             $(`#year${i}`).attr('href', `/{{ type.type }}/${i}/q/{{ date.quarter }}/`)
             link = "http://optimal-contractor-report.herokuapp.com"+$(`#year${i}`).attr('href');
             localLink = "http://localhost:8080"+$(`#year${i}`).attr('href');
@@ -421,7 +421,7 @@
         $("#bestpagecollection").attr('href', '/bestpagecollection/{{ date.year }}/{{ date.month }}/');
         $("#collegecontactcollection").attr('href', '/collegecontactcollection/{{ date.year }}/{{ date.month }}/');
 
-        for (let i = 2014; i < 2021; i++) {
+        for (let i = 2014; i < 2022; i++) {
             $(`#year${i}`).attr('href', `/{{ type.type }}/${i}/{{ date.month }}/`)
             link = "http://optimal-contractor-report.herokuapp.com"+$(`#year${i}`).attr('href');
             localLink = "http://localhost:8080"+$(`#year${i}`).attr('href');
@@ -434,11 +434,11 @@
 
     } else {
         $("#period").text("Month: "+isMonth)
-        $("#tuitioncollection").attr('href', '/tuitioncollection/2020/{{ date.month }}/')
-        $("#degreecollection").attr('href', '/degreecollection/2020/{{ date.month }}/')
-        $("#bestpagecollection").attr('href', '/bestpagecollection/2020/{{ date.month }}/')
-        $("#collegecontactcollection").attr('href', '/collegecontactcollection/2020/{{ date.month }}/')
-        for (let i = 2014; i < 2021; i++) {
+        $("#tuitioncollection").attr('href', '/tuitioncollection/2021/{{ date.month }}/')
+        $("#degreecollection").attr('href', '/degreecollection/2021/{{ date.month }}/')
+        $("#bestpagecollection").attr('href', '/bestpagecollection/2021/{{ date.month }}/')
+        $("#collegecontactcollection").attr('href', '/collegecontactcollection/2021/{{ date.month }}/')
+        for (let i = 2014; i < 2022; i++) {
             $(`#year${i}`).attr('href', `/{{ type.type }}/${i}/{{ date.month }}/`)
         }
 
@@ -468,5 +468,22 @@
     }
 </script>
 
-</table>
+{{#each all_users}}
+
+    <script>
+        $('#contractor-list').append('<option value="{{this.id}}">{{this.name}}</option>')
+
+    </script>
+
+{{/each}}
+
+<script>
+    $('#contractor-list').change(() => {
+        $('#contract-page').attr('href', "/id/"+$('#contractor-list').val())
+        console.log($('#contract-page').attr())
+    })
+
+</script>
+
+
 </div>

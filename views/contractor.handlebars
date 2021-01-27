@@ -1,0 +1,939 @@
+<div>
+<a href="/">BACK TO HOME</a>
+
+<style>
+    td {
+        border: 1px solid black;
+    }
+    .x-axis {
+        height: 75px;
+    }
+    table {
+        width: 100%;
+    }
+    td { 
+        position: relative;
+        font-size: 12px;
+    }
+    .bar {
+        position: absolute;
+        top: -7px;
+        
+        
+        width: 26px;
+        font-size: 12px;
+        vertical-align: bottom;
+        padding: 1px;
+    }
+    .span-div {
+        position: relative;
+        padding: 0px;
+    }
+    .month-rate {
+        position: absolute;
+        top: -20px;
+        padding: 0px;
+    }
+    .degree {
+        background-color: #58CCED;
+    }
+    .tuition {
+        background-color: #33CC33;
+    }
+
+</style>
+
+    <script>
+        let barHeight
+
+    </script>
+
+<h1>{{this.name}}</h1>
+
+<h2>Tuition Collection</h2>
+
+<table>
+    
+    <tr class="x-axis">
+        <td>
+            4
+        </td>
+    </tr>
+    <tr class="x-axis">
+        <td>
+            3
+        </td>
+    </tr>
+    <tr class="x-axis">
+        <td>
+            2
+        </td>
+    </tr>
+    <tr class="x-axis">
+        <td>
+            1
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+            Effiency
+        </td>
+        <td>
+            01-2018
+            <div class="bar rounded tuition" id="bar1-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span1-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            02-2018
+            <div class="bar rounded tuition" id="bar2-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span2-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            03-2018
+            <div class="bar rounded tuition" id="bar3-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span3-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            04-2018
+            <div class="bar rounded tuition" id="bar4-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span4-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            05-2018
+            <div class="bar rounded tuition" id="bar5-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span5-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            06-2018
+            <div class="bar rounded tuition" id="bar6-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span6-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            07-2018
+            <div class="bar rounded tuition" id="bar7-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span7-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            08-2018
+            <div class="bar rounded tuition" id="bar8-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span8-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            09-2018
+            <div class="bar rounded tuition" id="bar9-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span9-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            10-2018
+            <div class="bar rounded tuition" id="bar10-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span10-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            11-2018
+            <div class="bar rounded tuition" id="bar11-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span11-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            12-2018
+            <div class="bar rounded tuition" id="bar12-2018">
+               <div class="span-div">
+                    <div class="month-rate" id="span12-2018-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+
+
+        <td>
+            01-2019
+            <div class="bar rounded tuition" id="bar1-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span1-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            02-2019
+            <div class="bar rounded tuition" id="bar2-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span2-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            03-2019
+            <div class="bar rounded tuition" id="bar3-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span3-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            04-2019
+            <div class="bar rounded tuition" id="bar4-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span4-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            05-2019
+            <div class="bar rounded tuition" id="bar-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span5-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            06-2019
+            <div class="bar rounded tuition" id="bar6-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span6-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            07-2019
+            <div class="bar rounded tuition" id="bar7-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span7-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            08-2019
+            <div class="bar rounded tuition" id="bar8-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span8-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            09-2019
+            <div class="bar rounded tuition" id="bar9-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span9-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            10-2019
+            <div class="bar rounded tuition" id="bar10-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span10-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            11-2019
+            <div class="bar rounded tuition" id="bar11-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span11-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            12-2019
+            <div class="bar rounded tuition" id="bar12-2019">
+                <div class="span-div">
+                    <div class="month-rate" id="span12-2019-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+
+
+        <td>
+            01-2020
+            <div class="bar rounded tuition" id="bar1-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span1-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            02-2020
+            <div class="bar rounded tuition" id="bar2-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span2-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            03-2020
+            <div class="bar rounded tuition" id="bar3-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span3-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            04-2020
+            <div class="bar rounded tuition" id="bar4-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span4-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            05-2020
+            <div class="bar rounded tuition" id="bar5-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span5-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            06-2020
+            <div class="bar rounded tuition" id="bar6-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span6-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            07-2020
+            <div class="bar rounded tuition" id="bar7-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span7-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            08-2020
+            <div class="bar rounded tuition" id="bar8-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span8-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            09-2020
+            <div class="bar rounded tuition" id="bar9-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span9-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            10-2020
+            <div class="bar rounded tuition" id="bar10-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span10-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            11-2020
+            <div class="bar rounded tuition" id="bar11-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span11-2020-tuition">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            12-2020
+            <div class="bar rounded tuition" id="bar12-2020">
+                <div class="span-div">
+                    <div class="month-rate" id="span12-2020-tuition">
+                        
+                    </div>
+                </div>
+            </div>
+        </td>
+
+
+
+    </tr>
+
+
+
+</table>
+
+
+{{#each tuition_data}}
+
+
+    <script>
+        barHeight = ({{this.total_cost}} / {{this.tuition_sum}})
+        //console.log("barHeight "+barHeight)
+        $('#span{{this.month}}-{{this.year}}-tuition').text(barHeight.toFixed(2))
+        barHeight = barHeight * 75
+        if (barHeight > 300) {
+            barHeight = 300;
+        };
+        //console.log("barHeight "+barHeight)
+        //console.log("bar{{this.month}}-{{this.year}}")
+        //console.log(`${barHeight}px`)
+        $('#bar{{this.month}}-{{this.year}}').css({'position': 'absolute','height': `${barHeight}px`,'top': `-${barHeight+3}px`})
+    </script>
+
+
+{{/each}}
+
+<br>
+<br>
+
+<h2>Degree Collection</h2>
+
+
+<table>
+    
+    <tr class="x-axis">
+        <td>
+            4
+        </td>
+    </tr>
+    <tr class="x-axis">
+        <td>
+            3
+        </td>
+    </tr>
+    <tr class="x-axis">
+        <td>
+            2
+        </td>
+    </tr>
+    <tr class="x-axis">
+        <td>
+            1
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+            Effiency
+        </td>
+        <td>
+            01-2018
+            <div class="bar rounded degree" id="bar1-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span1-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            02-2018
+            <div class="bar rounded degree" id="bar2-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span2-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            03-2018
+            <div class="bar rounded degree" id="bar3-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span3-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            04-2018
+            <div class="bar rounded degree" id="bar4-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span4-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            05-2018
+            <div class="bar rounded degree" id="bar5-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span5-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            06-2018
+            <div class="bar rounded degree" id="bar6-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span6-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            07-2018
+            <div class="bar rounded degree" id="bar7-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span7-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            08-2018
+            <div class="bar rounded degree" id="bar8-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span8-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            09-2018
+            <div class="bar rounded degree" id="bar9-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span9-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            10-2018
+            <div class="bar rounded degree" id="bar10-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span10-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            11-2018
+            <div class="bar rounded degree" id="bar11-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span11-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            12-2018
+            <div class="bar rounded degree" id="bar12-2018-degree">
+               <div class="span-div">
+                    <div class="month-rate" id="span12-2018-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+
+
+        <td>
+            01-2019
+            <div class="bar rounded degree" id="bar1-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span1-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            02-2019
+            <div class="bar rounded degree" id="bar2-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span2-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            03-2019
+            <div class="bar rounded degree" id="bar3-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span3-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            04-2019
+            <div class="bar rounded degree" id="bar4-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span4-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            05-2019
+            <div class="bar rounded degree" id="bar5-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span5-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            06-2019
+            <div class="bar rounded degree" id="bar6-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span6-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            07-2019
+            <div class="bar rounded degree" id="bar7-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span7-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            08-2019
+            <div class="bar rounded degree" id="bar8-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span8-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            09-2019
+            <div class="bar rounded degree" id="bar9-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span9-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            10-2019
+            <div class="bar rounded degree" id="bar10-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span10-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            11-2019
+            <div class="bar rounded degree" id="bar11-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span11-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            12-2019
+            <div class="bar rounded degree" id="bar12-2019-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span12-2019-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+
+
+        <td>
+            01-2020
+            <div class="bar rounded degree" id="bar1-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span1-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            02-2020
+            <div class="bar rounded degree" id="bar2-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span2-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            03-2020
+            <div class="bar rounded degree" id="bar3-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span3-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            04-2020
+            <div class="bar rounded degree" id="bar4-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span4-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            05-2020
+            <div class="bar rounded degree" id="bar5-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span5-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            06-2020
+            <div class="bar rounded degree" id="bar6-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span6-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            07-2020
+            <div class="bar rounded degree" id="bar7-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span7-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            08-2020
+            <div class="bar rounded degree" id="bar8-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span8-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            09-2020
+            <div class="bar rounded degree" id="bar9-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span9-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            10-2020
+            <div class="bar rounded degree" id="bar10-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span10-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            11-2020
+            <div class="bar rounded degree" id="bar11-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span11-2020-degree">
+
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            12-2020
+            <div class="bar rounded degree" id="bar12-2020-degree">
+                <div class="span-div">
+                    <div class="month-rate" id="span12-2020-degree">
+                        
+                    </div>
+                </div>
+            </div>
+        </td>
+
+
+
+    </tr>
+
+
+
+</table>
+
+
+{{#each degree_data}}
+
+
+    <script>
+        barHeight = ({{this.total_cost}} / {{this.degree_sum}})
+        console.log("barHeight"+barHeight)
+        $('#span{{this.month}}-{{this.year}}-degree').text(barHeight.toFixed(2))
+        barHeight = barHeight * 75
+        if (barHeight > 300) {
+            barHeight = 300;
+        };
+        //console.log("barHeight "+barHeight)
+        console.log("bar{{this.month}}-{{this.year}}")
+        //console.log(`${barHeight}px`)
+        $('#bar{{this.month}}-{{this.year}}-degree').css({'position': 'absolute','height': `${barHeight}px`,'top': `-${barHeight+4}px`})
+    </script>
+
+
+{{/each}}
+
+{{#each all_users}}
+
+    <script>
+        $('#contractor-list').append('<option value="{{this.id}}">{{this.name}}</option>')
+
+    </script>
+
+{{/each}}
+
+<script>
+    $('#contractor-list').change(() => {
+        $('#contract-page').attr('href', "/id/"+$('#contractor-list').val())
+        console.log($('#contract-page').attr())
+    })
+
+    $(`.contractor-view`).remove()
+
+    const d = new Date()
+    const m = d.getMonth() + 1
+    const y = d.getYear() + 1900
+    console.log("month: "+m+" Year: "+y)
+    
+    $('#degreecollection').attr('href', `/degreecollection/${y}/${m}`)
+    $('#tuitioncollection').attr('href', `/tuitioncollection/${y}/${m}`)
+    $('#bestpagecollection').attr('href', `/bestpagecollection/${y}/${m}`)
+    $('#collegecontactcollection').attr('href', `/collegecontactcollection/${y}/${m}`)
+
+    //$('#contract-page').click(() => {
+      //  window.location = "/id/"+$('#contractor-list').value()
+    //})
+</script>
+
+</div>

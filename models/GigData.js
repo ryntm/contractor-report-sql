@@ -96,106 +96,60 @@ let gigData = {
     orm.selectGigDataTuitionQATotal(year, res => {
       cb(res);
     })
+  },
+
+
+  // INDIVIDUAL CONTRACTOR START
+
+  // // GET NAME
+
+  getName: (contractorid, cb) => {
+    orm.getName(contractorid, res => {
+      cb(res);
+    })
+  },
+
+  // // GET DISTINT GIG TYPES
+
+  getContactGigTypes: (contractorid, cb) => {
+    orm.getContactGigTypes(contractorid, res => {
+      cb(res);
+    })
+  },
+
+  // // GET YEAR-MONTH DEGREE GIG AND UPWORK DATA 
+
+  getIndividualDegree: (contractorid, cb) => {
+    orm.getIndividualDegree(contractorid, res => {
+      cb(res);
+    })
+  },
+
+  // // GET YEAR-MONTH TUITION GIG AND UPWORK DATA
+
+  getIndividualTuition: (contractorid, cb) => {
+    orm.getIndividualTuition(contractorid, res => {
+      cb(res);
+    })
+  },
+
+  getAllGigTotal: (cb) => {
+    orm.getAllGigTotal(res => {
+      cb(res);
+    })
+  },
+
+  getAllUsers: (cb) => {
+    orm.getAllUsers(res => {
+      cb(res);
+    })
   }
+
+
+
+
 
 
 };
 
 module.exports = gigData
-
-// /* eslint-disable camelcase */
-// module.exports = function(sequelize, DataTypes) {
-//   const GigData = sequelize.define(
-//     "GigData",
-//     {
-//       gig_id: {
-//         type: DataTypes.INTEGER
-//       },
-//       type: {
-//         type: DataTypes.STRING
-//       },
-//       submitted_on: {
-//         type: DataTypes.STRING
-//       },
-//       submitted_month: {
-//         type: DataTypes.INTEGER
-//       },
-//       submitted_year: {
-//         type: DataTypes.INTEGER
-//       },
-//       submitted_quarter: {
-//         type: DataTypes.INTEGER
-//       },
-//       submitted_week: {
-//         type: DataTypes.INTEGER
-//       },
-//       qa_submitted_on: {
-//         type: DataTypes.STRING
-//       },
-//       qa_submitted_month: {
-//         type: DataTypes.INTEGER
-//       },
-//       qa_submitted_year: {
-//         type: DataTypes.INTEGER
-//       },
-//       qa_submitted_quarter: {
-//         type: DataTypes.INTEGER
-//       },
-//       qa_submitted_week: {
-//         type: DataTypes.INTEGER
-//       },
-//       owner_id: {
-//         type: DataTypes.INTEGER
-//       },
-//       oc_name: {
-//         type: DataTypes.STRING
-//       },
-//       qa_owner_id: {
-//         type: DataTypes.INTEGER
-//       },
-//       qaer_name: {
-//         type: DataTypes.STRING
-//       },
-//       oc_guide_admin: {
-//         type: DataTypes.INTEGER
-//       },
-//       qa_guide_admin: {
-//         type: DataTypes.INTEGER
-//       },
-//       qa_edits: {
-//         type: DataTypes.INTEGER
-//       },
-//       manager_edits: {
-//         type: DataTypes.INTEGER
-//       },
-//       college_id: {
-//         type: DataTypes.INTEGER
-//       },
-//       word_count_college_description: {
-//         type: DataTypes.INTEGER
-//       },
-//       word_count_rankings: {
-//         type: DataTypes.INTEGER
-//       },
-//       word_count_writings: {
-//         type: DataTypes.INTEGER
-//       },
-//       degree_gig_count: {
-//         type: DataTypes.INTEGER
-//       },
-//       tuition_degree_count: {
-//         type: DataTypes.INTEGER
-//       },
-//       tuition_cert_count: {
-//         type: DataTypes.INTEGER
-//       },
-//       classname_count: {
-//         type: DataTypes.INTEGER
-//       }
-//     },
-//     {
-//       freezeTableName: true
-//     }
-//   );
-//   return GigData;
-// };

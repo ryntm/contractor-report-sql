@@ -99,6 +99,20 @@ let gigDataOutreach = {
         orm.selectGigDataCollegeContactQATotal(year, res => {
             cb(res);
         })
+    },
+
+        // ALL INFORMATION FOR A CONTRACTOR
+
+    getIndividualCollegeContact: (contractorid, cb) => {
+        orm.getIndividualCollegeContact(contractorid, res => {
+          cb(res);
+        })
+    },
+    
+      getIndividualBestPage: (contractorid, cb) => {
+        orm.getIndividualBestPage(contractorid, res => {
+          cb(res);
+        })
     }
 
 
